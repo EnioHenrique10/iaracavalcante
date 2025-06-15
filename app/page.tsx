@@ -15,11 +15,11 @@ export default function Home() {
           <div className="flex items-center gap-2">
             <div className="flex items-center space-x-2">
                     <Image
-                      src="/logo.jpeg"
+                      src="/LOGOSECUNDARIA.PNG"
                       alt="Logo"
                       width={250}
                       height={42}
-                      className="rounded-full transition-transform duration-300 hover:scale-105"
+                      className="transition-transform duration-300 hover:scale-105"
                     />
                 </div>
           </div>
@@ -85,7 +85,7 @@ export default function Home() {
            <div className="flex-1 relative flex justify-center">
               <div className="relative w-full max-w-[350px] h-[400px] sm:h-[450px] md:h-[500px] rounded-xl overflow-hidden shadow-xl">
                 <img
-                  src="/foto1.jpeg"
+                  src="/logo3.png"
                   alt="Iara Cavalcante - Enfermeira Especialista"
                   className="w-full h-full object-cover"
                 />
@@ -170,7 +170,7 @@ export default function Home() {
                   Ao chegar à clínica, você encontrará um ambiente de paz, aconchego e aromas terapêuticos cuidadosamente preparados com o auxílio da aromaterapia. Desde o primeiro contato, você já sentirá o cuidado, o equilíbrio e o alívio começando a fazer parte da sua jornada.
 
                   Público Atendido
-                  Adolescentes a partir de 16 anos, adultos e dosos.
+                  Adolescentes a partir de 16 anos, adultos e idosos.
                 </p>
                 <div className="pt-4">
                   <Button className="bg-green-600 hover:bg-green-700">
@@ -269,20 +269,20 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 {
-                  name: "Maria Silva",
-                  condition: "Fibromialgia",
+                  name: "Marcos Lopes",
+                  condition: "",
                   testimonial:
-                    "Após anos sofrendo com dores intensas, finalmente encontrei alívio com as terapias da Iara. Minha qualidade de vida melhorou significativamente.",
+                    "Ambiente super agradável com o melhor atendimento e muito profissionalismo. Super indico.",
                 },
                 {
                   name: "João Santos",
-                  condition: "Dor na coluna",
+                  condition: "",
                   testimonial:
                     "Tinha dores crônicas na coluna que me impediam até de trabalhar. Com o tratamento natural, consegui retomar minhas atividades normais.",
                 },
                 {
                   name: "Ana Oliveira",
-                  condition: "Enxaqueca",
+                  condition: "",
                   testimonial:
                     "Sofria com enxaquecas frequentes que não respondiam a medicamentos. As técnicas aplicadas pela Iara reduziram drasticamente a frequência e intensidade das crises.",
                 },
