@@ -41,10 +41,17 @@ export default function Home() {
             </Link>
           </nav>
           <div>
-            <Button className="bg-green-600 hover:bg-green-700">
-              <Phone className="mr-2 h-4 w-4" />
-              Agendar Consulta
-            </Button>
+              <a
+                href="https://wa.me/5581982670833"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-green-600 hover:bg-green-700 px-1 py-0.2 text-[7px] md:px-6 md:py-1 md:text-base flex items-center rounded text-white"
+              >
+                <Phone className="mr-1 h-3 w-3 md:h-5 md:w-5" />
+                Agendar Consulta
+              </a>
+
+
           </div>
         </div>
       </header>
@@ -325,10 +332,12 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="https://wa.me/5581982670833" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-white text-green-700 hover:bg-green-50">
                   <Phone className="mr-2 h-4 w-4" />
                   Agendar Consulta
                 </Button>
+                </Link>
                 <Link href="https://wa.me/5581982670833" target="_blank" rel="noopener noreferrer">
                   <Button variant="outline" size="lg" className="border-white text-white hover:bg-green-600">
                     <MessageCircle className="mr-2 h-4 w-4" />
