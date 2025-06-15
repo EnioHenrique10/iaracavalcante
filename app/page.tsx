@@ -15,7 +15,7 @@ export default function Home() {
           <div className="flex items-center gap-2">
             <div className="flex items-center space-x-2">
                     <Image
-                      src="/LOGOSECUNDARIA.PNG"
+                      src="/lgo1.png"
                       alt="Logo"
                       width={250}
                       height={42}
