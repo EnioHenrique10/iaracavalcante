@@ -71,11 +71,17 @@ export default function Home() {
                 Cuidado técnico, acolhimento e resultados reais no tratamento da dor sem uso de medicamentos.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-green-600 hover:bg-green-700">
-                  Agende sua Consulta
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-                <Link href="#servicos">
+              <a
+                href="https://wa.me/5581982670833?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button size="lg" className="bg-green-600 hover:bg-green-700">
+                      Agende sua Consulta
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </a>
+                    <Link href="#servicos">
                   <Button variant="outline" size="lg" className="border-green-600 text-green-700 hover:bg-green-50">
                     Conheça os Tratamentos
                   </Button>
@@ -339,7 +345,7 @@ export default function Home() {
                 </Button>
                 </Link>
                 <Link href="https://wa.me/5581982670833" target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline" size="lg" className="border-white text-white hover:bg-green-600">
+                  <Button variant="outline" size="lg" className="border-white text-green-700 hover:bg-green-600">
                     <MessageCircle className="mr-2 h-4 w-4" />
                     WhatsApp
                   </Button>
