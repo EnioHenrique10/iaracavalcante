@@ -2,7 +2,7 @@ import type React from "react";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
-import Script from "next/script"; // IMPORTA O Script AQUI
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,22 +30,28 @@ export default function RootLayout({
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://www.iaracavalcante.com.br" />
 
-        {/* Google Tag Manager */}
+        {/* Google Tag  */}
         <Script
-          strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=AW-17030233557"
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17323186179"
+          strategy="beforeInteractive"
+          async
         />
-        <Script id="gtag-init" strategy="afterInteractive">
+        <Script id="gtag-init" strategy="beforeInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'AW-17030233557');
+            gtag('config', 'AW-17323186179');
           `}
         </Script>
       </head>
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
+        >
           {children}
         </ThemeProvider>
       </body>
