@@ -1,25 +1,27 @@
 'use client';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
 import 'swiper/css';
+import 'swiper/css/pagination';
 import React from 'react';
 
 const youtubeUrls = [
-  'https://www.youtube.com/shorts/_3RgBfR8rTQ',
-  'https://www.youtube.com/shorts/Erp0YLbyiaA',
+  'https://www.youtube.com/shorts/aquDwPGsnOo',
+  'https://www.youtube.com/shorts/D7B0hkQG2eM',
   'https://www.youtube.com/shorts/zuNg5oldzc4',
-  'https://www.youtube.com/shorts/ixrkMRpDkew',
+  'https://www.youtube.com/shorts/IKH4AzY8KpM',
 ];
 
-// Função para extrair o ID do vídeo do YouTube de diferentes formatos
-const extractYoutubeId = (url) => {
+// Extrai o ID do YouTube de URLs curtas ou completas
+const extractYoutubeId = (url: string) => {
   const regex = /(?:youtube\.com\/(?:watch\?v=|shorts\/)|youtu\.be\/)([\w-]+)/;
   const match = url.match(regex);
   return match ? match[1] : null;
 };
 
 const VideoGallery = () => {
-  const videoIds = youtubeUrls.map(extractYoutubeId).filter(id => id !== null);
+  const videoIds = youtubeUrls.map(extractYoutubeId).filter((id) => id !== null);
 
   return (
     <section className="py-16 bg-green-50">
@@ -36,13 +38,13 @@ const VideoGallery = () => {
           </p>
         </div>
 
-        {/* Desktop (quatro lado a lado) */}
+        {/* Desktop (quatro vídeos lado a lado) */}
         <div className="hidden md:flex justify-between gap-4">
           {videoIds.map((id, index) => (
             <div key={index} className="w-1/4 aspect-video">
               <iframe
                 src={`https://www.youtube.com/embed/${id}`}
-                title={`Video ${index + 1}`}
+                title={`Vídeo ${index + 1}`}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
@@ -52,15 +54,21 @@ const VideoGallery = () => {
           ))}
         </div>
 
-        {/* Mobile (carrossel) */}
+        {/* Mobile (carrossel com swipe + paginação) */}
         <div className="md:hidden">
-          <Swiper spaceBetween={16} slidesPerView={1.2} centeredSlides loop>
+          <Swiper
+            modules={[Pagination]}
+            spaceBetween={16}
+            slidesPerView={1}
+            pagination={{ clickable: true }}
+            className="!pb-8" // Adiciona espaço para os pontinhos
+          >
             {videoIds.map((id, index) => (
               <SwiperSlide key={index}>
                 <div className="aspect-video w-full">
                   <iframe
                     src={`https://www.youtube.com/embed/${id}`}
-                    title={`Video ${index + 1}`}
+                    title={`Vídeo ${index + 1}`}
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
