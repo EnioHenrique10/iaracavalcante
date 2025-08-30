@@ -4,6 +4,7 @@ import { Phone, Clock, MapPin, CheckCircle, ArrowRight, MessageCircle } from "lu
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import VideoGallery from "@/components/index"
+import FormularioConsulta from "@/components/form"
 
 
 
@@ -359,73 +360,43 @@ export default function Home() {
         </section>
 
         {/* Contact */}
-        <section id="contato" className="py-16 bg-white">
-          <div className="container">
-            <div className="text-center mb-12">
-              <div className="inline-block rounded-lg bg-green-100 px-3 py-1 text-sm text-green-800 mb-4">Contato</div>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-green-800">Entre em contato</h2>
-              <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-                Estamos à disposição para esclarecer suas dúvidas e agendar sua consulta.
-              </p>
-            </div>
+     <section id="contato" className="py-16 bg-white">
+  <div className="container">
+    <div className="text-center mb-12">
+      <div className="inline-block rounded-lg bg-green-100 px-3 py-1 text-sm text-green-800 mb-4">Contato</div>
+      <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-green-800">Entre em contato</h2>
+      <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+        Estamos à disposição para esclarecer suas dúvidas e agendar sua consulta.
+      </p>
+    </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              <div className="space-y-8">
-                <div className="flex items-start gap-4">
-                  <div className="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
-                    <MapPin className="h-5 w-5 text-green-700" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold mb-2 text-black">Endereço</h3>
-                    <p className="text-gray-600">
-                      Av. Ayrton Senna, 3990
-                      <br />
-                      Jaboatão, PE - CEP: 54420-700
-                    </p>
-                  </div>
-                </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      {/* 📋 Formulário */}
+      <div>
+        <FormularioConsulta />
+      </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
-                    <Phone className="h-5 w-5 text-green-700" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold mb-2 text-black">Telefone</h3>
-                    <p className="text-gray-600">(81) 98267-0833</p>
-                  </div>
-                </div>
+      {/* 🗺️ Mapa */}
+      <div className="h-full">
+        <div className="relative h-[400px] w-full rounded-lg overflow-hidden shadow-md">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.685647608474!2d-34.9212352!3d-8.1862322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7aae1006718bae5%3A0xba728893a95e7eba!2sConsult%C3%B3rio%20Dra.%20Iara%20Cavalcante!5e0!3m2!1spt-BR!2sbr!4v1718064461375!5m2!1spt-BR!2sbr"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            title="Localização"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-                <div className="flex items-start gap-4">
-                  <div className="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
-                    <Clock className="h-5 w-5 text-green-700" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold mb-2 text-black">Horário de Atendimento</h3>
-                    <p className="text-gray-600">
-                      Segunda a Sexta: 9h às 18h
-                      <br />
-                      Sábado: 8h às 14h
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="relative h-[300px] md:h-auto rounded-lg overflow-hidden">
-               <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.685647608474!2d-34.9212352!3d-8.1862322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7aae1006718bae5%3A0xba728893a95e7eba!2sConsult%C3%B3rio%20Dra.%20Iara%20Cavalcante!5e0!3m2!1spt-BR!2sbr!4v1718064461375!5m2!1spt-BR!2sbr"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0, position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
-                    allowFullScreen={true}
-                    loading="lazy"
-                    title="Localização"
-                  />
-
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
+
+      
 
       {/* WhatsApp Floating Button */}
       <Link
@@ -470,7 +441,7 @@ export default function Home() {
             </div>
           </div>
           <div className="border-t border-green-700 mt-8 pt-8 text-center text-green-100">
-            <p>&copy; {new Date().getFullYear()} Iara Cavalcante - Todos os direitos reservados</p>
+            <p>&copy; {new Date().getFullYear()} DevSitee - Todos os direitos reservados</p>
           </div>
         </div>
       </footer>
