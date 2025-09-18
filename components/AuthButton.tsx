@@ -39,6 +39,14 @@ const AuthButton: React.FC = () => {
     }
   };
 
+  // Função para fechar o formulário de login ao clicar fora dele
+  const handleCloseModal = (e: React.MouseEvent) => {
+    // Verifica se o clique foi fora do formulário
+    if (e.target === e.currentTarget) {
+      setShowLogin(false); // Fecha o formulário
+    }
+  };
+
   return (
     <>
       {/* Botão de Acessar Dashboard na NavBar */}
@@ -47,14 +55,20 @@ const AuthButton: React.FC = () => {
           onClick={toggleLoginForm}
           className="bg-green-600 hover:bg-green-700 px-4 py-2 text-sm md:px-6 md:py-3 rounded-md text-white"
         >
-          Acessar Dashboard
+          Entrar
         </button>
       </div>
 
       {/* Formulário de Login */}
       {showLogin && (
-        <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50">
-          <div className="w-full max-w-sm p-8 bg-white rounded-xl shadow-lg">
+        <div
+          onClick={handleCloseModal} // Fecha ao clicar fora
+          className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()} // Impede que o clique dentro do formulário feche o modal
+            className="w-full max-w-sm p-8 bg-white rounded-xl shadow-lg"
+          >
             <h2 className="text-2xl font-semibold text-center mb-6">Entrar</h2>
             <input
               type="email"

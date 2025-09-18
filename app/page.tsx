@@ -44,7 +44,7 @@ export default function Home() {
               Contato
             </Link>
           </nav>
-          <div className="hidden md:block">
+          <div>
             <AuthButton />
           </div>
         </div>
