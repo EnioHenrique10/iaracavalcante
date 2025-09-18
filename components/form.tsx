@@ -61,16 +61,15 @@ export default function FormularioConsulta() {
     }
   }
 
-  // Gera todos os horários possíveis entre 08:00 e 18:00, com intervalos de 30 min
-  const gerarHorarios = (): string[] => {
-    const horarios: string[] = []
-    for (let hora = 8; hora <= 17; hora++) {
-      horarios.push(`${String(hora).padStart(2, '0')}:00`)
-      horarios.push(`${String(hora).padStart(2, '0')}:30`)
-    }
-    horarios.push("18:00")
-    return horarios
+// Gera todos os horários possíveis entre 08:00 e 18:00, com intervalos de 1 hora
+const gerarHorarios = (): string[] => {
+  const horarios: string[] = []
+  for (let hora = 8; hora <= 18; hora++) {
+    horarios.push(`${String(hora).padStart(2, '0')}:00`)
   }
+  return horarios
+}
+
 
   // Busca horários disponíveis sempre que a data for alterada
   useEffect(() => {
