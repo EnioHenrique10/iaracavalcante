@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image"
 import Link from "next/link"
 import { Phone, Clock, MapPin, CheckCircle, ArrowRight, MessageCircle } from "lucide-react"
@@ -5,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import VideoGallery from "@/components/index"
 import FormularioConsulta from "@/components/form"
+import AuthButton from "@/components/AuthButton"
 
 
 
@@ -42,18 +44,8 @@ export default function Home() {
               Contato
             </Link>
           </nav>
-          <div>
-              <a
-                href="https://wa.me/5581982670833"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-green-600 hover:bg-green-700 px-1 py-0.2 text-[7px] md:px-6 md:py-1 md:text-base flex items-center rounded text-white"
-              >
-                <Phone className="mr-1 h-3 w-3 md:h-5 md:w-5" />
-                Agendar Consulta
-              </a>
-
-
+          <div className="hidden md:block">
+            <AuthButton />
           </div>
         </div>
       </header>
